@@ -3,10 +3,12 @@ var id;
 $(document).ready(function() {
     $( "#formRegistro" ).submit(function( event ) {
 
+      
       mensajeRegistro();
       saveUser() ;
       event.preventDefault();
   });
+  
 
     var isAuth = localStorage.getItem('isAuth');
     if(isAuth != null){
@@ -41,18 +43,8 @@ $(document).ready(function() {
           var tarjeta = $("#tarjeta").val();
           var email = $("#email").val();
           var password = $("#password").val();
-         /* var  phone = $("#phone").val();
-          var type = document.getElementById("list").value;
-          var workshop = document.getElementById("myCheck").checked;
-          var description = document.getElementById('textarea').value;
-          var status = true;*/
-  
           createUser(id, name,apellido,domicilio,fecha,dni,tarjeta, email, password);
      }
-  
-
-  
-
   
        function myFunction() {
        var checkBox = document.getElementById("myCheck");
@@ -63,6 +55,7 @@ $(document).ready(function() {
          $("#checkBox").hide();
        } else {
          text.style.display = "none";
+         
          $("#checkBox").show();
        }
       }
@@ -71,11 +64,20 @@ $(document).ready(function() {
         swal({
           title:"Muy Bien!",
           text: "Continuar!",
-          icon: "success",
-          button: "Aww yiss!",
+          icon: "Success",
+          button: "Continuar",
           }).then((value) => {
                location.href ="./index.html";
         });
+
+        
+       } function mensajeErrorRegistro(){
+        swal({
+          title: "Algun Dato esta Mal!",
+          text: "Toca Continuar para volver a Intentarlo!",
+          icon: "warning",
+          button: "Continuar",
+          });
        }
 
 

@@ -52,9 +52,13 @@ $("#register").click( function() {
         location.href ="./registrar.html";
                     });
 
- $("#buscarr").click( function() {
-  buscarVehiculo();
-  });
+$("#vender").click( function() {
+       location.href ="./vender.html";
+       });                    
+
+/*$("#buscarr").click( function() {
+  buscarr();
+  });*/
         ///////////////////////////
 });
 function salir() {

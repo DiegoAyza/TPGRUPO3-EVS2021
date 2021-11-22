@@ -186,21 +186,21 @@ function createObras(id, vendedor, marca, modelo, anio, precio, permuta, KM, fot
     }else{
     var busquedaObras = [];
       for(let i = 0; i < misVehiculos.length; i++){
-        if(misVehiculos[i].name.toLowerCase()  == name.toLowerCase() ||
-           misVehiculos[i].autor.toLowerCase() == name.toLowerCase()
+        if(misVehiculos[i].marca.toLowerCase()  == name.toLowerCase() ||
+           misVehiculos[i].modelo.toLowerCase() == name.toLowerCase()
            /*misVehiculos[i].list3.toLowerCase() == name.toLowerCase()*/) {
               busquedaObras.push(misVehiculos[i]);
              }
-        else{
-          if(name.toLowerCase() == 'en venta' &&
-          misVehiculos[i].list3.toLowerCase() == 1 ){
+        /*else{
+          if(name.toLowerCase() == 'SI' &&
+          misVehiculos[i].permuta.toLowerCase() == 1 ){
             busquedaObras.push(misVehiculos[i]);
           }
-          if(name.toLowerCase() == 'en exhibicion' &&
-          misVehiculos[i].list3.toLowerCase() != 1 ){
+          if(name.toLowerCase() == 'NO' &&
+          misVehiculos[i].permuta.toLowerCase() != 1 ){
             busquedaObras.push(misVehiculos[i]);
           }
-        }
+        }*/
           }
             return busquedaObras;
       }

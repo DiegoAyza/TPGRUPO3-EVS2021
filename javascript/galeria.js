@@ -61,6 +61,7 @@ $(document).ready(function() {
                   <p> Precio: $${valor.precio}</p>
                   <p> KM: ${valor.KM}</p>
                   <p> Permuta: ${valor.permuta}</p>
+                  <a class="btn btn-block btn-primary" >Comprar</a>
 
 
                 </div>
@@ -72,9 +73,8 @@ $(document).ready(function() {
         }
   }
   
-      function buscarObras(){
+      function buscarr(){
         var name = $("#texto").val();
-           var buscarObras = searchObrasName(name);
-           mostrarObras(buscarObras);
+           var buscarr2 = searchObrasName(name);
+           mostrarObras(buscarr2);   
       }
-  

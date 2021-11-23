@@ -7,6 +7,8 @@
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./javascript/registrarvehiculo.js"></script>
+    <script src="./javascript/vehiculos.js"></script>
+
     <title></title>
   </head>
   <body>
@@ -43,7 +45,7 @@
 
   <div class="col-12">
     <div class="box-body chat" id="chat-box">
-          <Form id="formRegistro">
+          <Form id="formRegistro2">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label >Marca</label>
@@ -63,22 +65,26 @@
               </div>
               <div class="form-group col-md-6">
                 <label >Patente</label>
-                <input type="text" class="form-control" id="patente1" name="Patente1" required>
+                <input type="text" class="form-control" id="patente1" name="patente1" required>
               </div>
               <div class="form-group col-md-6">
                 <label >Vendedor</label>
                 <input type="int" class="form-control" id="vendedor1" name="vendedor1" required>
               </div>
+              <div class="form-group col-md-6">
+                <label >Kilometraje</label>
+                <input type="int" class="form-control" id="km1" name="km1" required>
+              </div>
               <div  
               class="form-group col-md-6 text-center" name="subida-imagenes" type="POST" enctype="multipart/formdata" >
               <label >Foto Vehiculo a Publicar</label><br>
-                <input type="file" name="imagen" />
+                <input type="file" id="foto1" name="imagen" />
                 </div>
                <div class="form-group col-md-6 text-center">
                <label >Permuta</label>
                <br>
-                <input type="radio"  name="q" id="per">SI
-                <input type="radio"  name="q" id="per">NO
+                <input type="radio"  name="q" id="per" value="SI">SI
+                <input type="radio"  name="q" id="per" value="NO">NO
               </div>
    
             </div>

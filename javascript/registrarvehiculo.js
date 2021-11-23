@@ -1,15 +1,12 @@
 var misUsers = [];
 var id;
 $(document).ready(function() {
-    $( "#formRegistro" ).submit(function( event ) {
-
-      
+    $( "#formRegistro2" ).submit(function( event ) {
       mensajeRegistro();
-      saveUser() ;
+      saveVehiculo() ;
       event.preventDefault();
   });
   
-
     var isAuth = localStorage.getItem('isAuth');
     /*if(isAuth != null){
       location.href ="./index.html";
@@ -26,32 +23,34 @@ $(document).ready(function() {
   $("#home").click( function() {
             location.href ="./index.html";
                 });
-  
- 
-  
   }*/
   $("#home").click( function() {
     location.href ="./index.html";
         });
   });
 
-  $("#home").click( function() {
-    location.href ="./index.html";
-        });
-  
-  function saveUser() {
-          getUsers();
-          var id = getId();
-          var name = $("#name").val();
-          var apellido = $("#apellido").val();
-          var domicilio = $("#domicilio").val();
-          var fecha = $("#fecha").val();
-          var dni = $("#dni").val();
-          var tarjeta = $("#tarjeta").val();
-          var email = $("#email").val();
-          var password = $("#password").val();
-          createUser(id, name,apellido,domicilio,fecha,dni,tarjeta, email, password);
+  function saveVehiculo() {
+          //getUsers();
+          var id = 10;//getId();
+          var marca2 = $("#marca1").val();
+          var modelo2 = $("#modelo1").val();
+          var precio2 = $("#precio1").val();
+          var ano2 = $("#ano1").val();
+          var km2 = $("#km1").val();
+          var vendedor2 = $("#vendedor1").val();
+          
+
+          var foto2 ='ka.jpg';//$("#foto1").val();//
+
+
+
+          var permuta2 ="SI";// $("#permuta1").val();
+          cargarVehiculos();
+        saveObra(createObras(id, vendedor2, marca2, modelo2, ano2, precio2, permuta2, km2, foto2, true));
+        
+
      }
+
   
        function myFunction() {
        var checkBox = document.getElementById("myCheck");
@@ -87,50 +86,13 @@ $(document).ready(function() {
           });
        }
 
-
-//////////////////////////////////////////////////////////
-
-       
-       function createUser(id, name,apellido,domicilio,fecha,dni,tarjeta, email, password){
-           var user = {
-           id : id,
-           name : name,
-           apellido: apellido,
-           domicilio: domicilio,
-           fecha: fecha,
-           dni: dni,
-           tarjeta:tarjeta,
-           email : email,
-           password : password
-         };
-         
-              misUsers.push(user);
-              
-               localStoregeUserList(misUsers);
-
-         }
-       
-         function getUsers(){
-           var storeList = localStorage.getItem('localUserList');
-           if(storeList == null){
-             misUsers = [];
-             }else{
-             misUsers = JSON.parse(storeList);
-           }
-           return misUsers;
-         }
-       
-         function localStoregeUserList(list){
-                 localStorage.setItem('localUserList', JSON.stringify(list));
-         }
-       
-         function getId(){
-           var storeList = localStorage.getItem('localUserList');
-           if(storeList == null){
-             id = 1;
-             }else{
-             misUsers = JSON.parse(storeList);
-             id = misUsers.length +1;
-             }
-           return id;
-         }
+       function getId(){
+        var storeList = localStorage.getItem('localUserList');
+        if(storeList == null){
+          id = 1;
+          }else{
+          misUsers = JSON.parse(storeList);
+          id = misUsers.length +1;
+          }
+        return id;
+      }

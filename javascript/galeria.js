@@ -55,15 +55,14 @@ $(document).ready(function() {
           galeria.innerHTML +=`
           <div class="item" id="itemObra" onClick="modal(${valor.id})">
               <h1>${valor.marca}</h1>
-            <img src="${ruta}" alt="" class="item-img" width="300" height="300">
+            <img src="${ruta}" alt="" class="item-img" width="350" height="300">
                 <div class="item-text">
                   <h3>${valor.modelo}</h3>
                   <p> Precio: $${valor.precio}</p>
                   <p> KM: ${valor.KM}</p>
-                  <p> Permuta: ${valor.permuta}</p>
+                  <p> Permuta: ${valor.permuta} </p>
                   <a class="btn btn-block btn-primary" >Comprar</a>
-
-
+                 
                 </div>
           </div>
           `

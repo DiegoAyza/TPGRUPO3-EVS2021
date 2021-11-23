@@ -157,7 +157,7 @@ function createObras(id, vendedor, marca, modelo, anio, precio, permuta, KM, fot
 
   function getObras(){
 
-    var obrasList = localStorage.getItem('localObrasList');
+    var obrasList = localStorage.getItem('localVehiculosList');
     if(obrasList == null){
       misVehiculos = [];
       }else{
@@ -166,11 +166,11 @@ function createObras(id, vendedor, marca, modelo, anio, precio, permuta, KM, fot
     return misVehiculos;
   }
   function localStoregeObrasList(list){
-          localStorage.setItem('localObrasList', JSON.stringify(list));
+          localStorage.setItem('localVehiculosList', JSON.stringify(list));
   }
 
   function getId(){
-    var obrasList = localStorage.getItem('localObrasList');
+    var obrasList = localStorage.getItem('localVehiculosList');
     if(obrasList == null){
       id = 1;
       }else{
@@ -187,7 +187,8 @@ function createObras(id, vendedor, marca, modelo, anio, precio, permuta, KM, fot
     var busquedaObras = [];
       for(let i = 0; i < misVehiculos.length; i++){
         if(misVehiculos[i].marca.toLowerCase()  == name.toLowerCase() ||
-           misVehiculos[i].modelo.toLowerCase() == name.toLowerCase()
+           misVehiculos[i].modelo.toLowerCase() == name.toLowerCase() ||
+           misVehiculos[i].precio == name
            /*misVehiculos[i].list3.toLowerCase() == name.toLowerCase()*/) {
               busquedaObras.push(misVehiculos[i]);
              }

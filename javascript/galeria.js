@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    if(localStorage.getItem('localObrasList') == null){
+    if(localStorage.getItem('localVehiculosList') == null){
       cargarVehiculos();
     }
     const galeria = document.getElementById('galeria');
@@ -58,9 +58,9 @@ $(document).ready(function() {
             <img src="${ruta}" alt="" class="item-img" width="350" height="300">
                 <div class="item-text">
                   <h3>${valor.modelo}</h3>
-                  <p> Precio: $${valor.precio}</p>
-                  <p> KM: ${valor.KM}</p>
-                  <p> Permuta: ${valor.permuta} </p>
+                  <p> <b>Precio: </b>$${valor.precio}</p>
+                  <p> <b>KM: </b>${valor.KM}</p>
+                  <p> <b>Permuta: </b>${valor.permuta} </p>
                   <a class="btn btn-block btn-primary" >Comprar</a>
                  
                 </div>
